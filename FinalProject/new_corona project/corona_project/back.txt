@@ -1,0 +1,366 @@
+-------------------Obstacle group 1----------------------
+local Obstacle_1, Group_1, Group_1_1
+local obs_1_img, obs_1_outline, obs_1_0
+local obs_1_1_img, obs_1_1_outline, obs_1_1
+local obs_1_2_img, obs_1_2_outline, obs_1_2
+local obs_1_3_img, obs_1_3_outline, obs_1_3
+
+
+-- local function spawn_obstacle_1(event)
+Obstacle_1 = display.newGroup()
+Group_1_1 = display.newGroup()
+Group_1 = display.newGroup()
+
+obs_1_img = "resources/images/obstacle_h_2.PNG"
+obs_1_outline = graphics.newOutline(2, obs_1_img)
+obs_1_0 = display.newImageRect(obs_1_img, 573.26, 142.52)
+physics.addBody(obs_1_0, "static", {density = 0.5, outline = obs_1_outline})
+
+
+obs_1_1_img = "resources/images/obstacle_c_1.png"
+obs_1_1_outline = graphics.newOutline(2, obs_1_1_img)
+obs_1_1 = display.newImageRect(obs_1_1_img, 180, 180)
+physics.addBody(obs_1_1, "static", {density = 0.5, outline = obs_1_1_outline})
+
+
+obs_1_2_img = "resources/images/obstacle_h_2.PNG"
+obs_1_2_outline = graphics.newOutline(2, obs_1_img)
+obs_1_2 = display.newImageRect(obs_1_2_img, 573.26, 142.52)
+physics.addBody(obs_1_2, "static", {density = 0.5, outline = obs_1_2_outline})
+
+obs_1_3_img = "resources/images/obstacle_c_1.png"
+obs_1_3_outline = graphics.newOutline(2, obs_1_1_img)
+obs_1_3 = display.newImageRect(obs_1_3_img, 180, 180)
+physics.addBody(obs_1_3, "static", {density = 0.5, outline = obs_1_3_outline})
+
+Group_1:insert(obs_1_0)
+Group_1:insert(obs_1_1)
+Group_1_1:insert(obs_1_2)
+Group_1_1:insert(obs_1_3)
+
+obs_1_1.y = -550
+
+Group_1_1.x = display.contentWidth
+obs_1_3.y = 550
+
+Obstacle_1:insert(Group_1)
+Obstacle_1:insert(Group_1_1)
+-- physics.addBody(Obstacle_1, "static", {density = 0.5})
+-- physics.addBody(Group_1, "static", {density = 0.5})
+-- physics.addBody(Group_1_1, "static", {density = 0.5})
+local function move_Obstacle_1(event)
+    obs_1_0.rotation = obs_1_0.rotation + 1
+    obs_1_1.rotation = obs_1_1.rotation - 5
+    Group_1.rotation = Group_1.rotation + 2
+    
+    obs_1_2.rotation = obs_1_2.rotation + 1
+    obs_1_3.rotation = obs_1_3.rotation + 5
+    Group_1_1.rotation = Group_1_1.rotation + 2
+    
+    -- Obstacle_1.y = Obstacle_1.y + 2.4
+    movey_forward(Obstacle_1)
+
+end
+
+-- -- end
+-- -- ///////////////////////////////////////////////////////////////////
+-- -------------------Obstacle group 2----------------------
+-- local Obstacle_2 = display.newGroup()
+-- local Group_2 = display.newGroup()
+
+-- local obs_2_img = "resources/images/obstacle_s_1.png"
+-- local obs_2_outline = graphics.newOutline(2, obs_2_img)
+
+-- local obs_2 = {}
+-- for a = 1, 6, 1 do
+--     obs_2[a] = display.newImageRect("resources/images/obstacle_s_1.png", 150, 150)
+--     physics.addBody(obs_2[a], "static", {density = 0.5, outline = cs_outline})
+--     obs_2[a].x = obs_2[a].x + 100
+--     obs_2[a].x = a * 300
+--     Group_2:insert(obs_2[a])
+-- end
+
+-- Obstacle_2:insert(Group_2)
+
+-- local function move_Obstacle_2(event)
+--     for a = 1, 5, 1 do
+--         obs_2[a].rotation = obs_2[a].rotation + 3
+--         moveX_backward(obs_2[a])
+--     end
+--     -- Obstacle_2.y = Obstacle_2.y + 2.4
+--     movey_forward(Obstacle_2)
+-- end
+
+
+-- -- ///////////////////////////////////////////////////////////////////
+-- -- -------------------Obstacle group 3----------------------
+-- local Obstacle_3 = display.newGroup()
+-- local Group_3 = display.newGroup()
+
+-- local obs_3_img = "resources/images/obstacle_h_2.png"
+-- local obs_3_outline = graphics.newOutline(2, obs_3_img)
+
+-- local obs_3 = {}
+-- for a = 1, 3, 1 do
+--     obs_3[a] = display.newImageRect(obs_3_img, 500, 120)
+--     physics.addBody(obs_3[a], "static", {density = 0.5, outline = obs_3_outline})
+--     obs_3[a].x = obs_3[a].x + 170
+--     obs_3[a].x = a * 600
+--     Group_3:insert(obs_3[a])
+-- end
+-- Obstacle_3:insert(Group_3)
+
+-- local function move_Obstacle_3(event)
+--     for a = 1, 3, 1 do
+--         -- obs_3[a].rotation = obs_3[a].rotation + 2
+--         moveX_backward(obs_3[a])
+--     end
+--     -- Obstacle_3.y = Obstacle_3.y + 2.4
+--     movey_forward(Obstacle_3)
+-- end
+
+
+-- -- ///////////////////////////////////////////////////////////////////
+-- -- -------------------Obstacle group 4----------------------
+-- local Obstacle_4, Group_4_1
+-- local reverse_obs_4, random_obs_4
+-- local group_4_1_img, group_4_1_outline, group_4_1
+-- local group_4_2_img, group_4_2_outline, group_4_2
+-- local group_4_3_img, group_4_3_outline, group_4_3
+-- local group_4_4_img, group_4_4_outline, group_4_4
+-- local group_4_5_img, group_4_5_outline, group_4_5
+-- local group_4_6_img, group_4_6_outline, group_4_6
+-- local group_4_7_img, group_4_7_outline, group_4_7
+-- local group_4_8_img, group_4_8_outline, group_4_8
+-- local randObs = {}
+-- -- randObs[1] = display
+-- -- randObs[i]:removeSelf()
+-- -- local function spawn_obstacle_4(event)
+-- Obstacle_4 = display.newGroup()
+-- Group_4_1 = display.newGroup()
+
+-- Obstacle_4.y = 0
+-- reverse_obs_4 = 1
+-- random_obs_4 = 1
+
+-- group_4_1_img = "resources/images/obstacle_h_1_1.png"
+-- group_4_1_outline = graphics.newOutline(2, group_4_1_img)
+-- group_4_1 = display.newImageRect(group_4_1_img, 500, 130)
+-- group_4_1.x = 0
+-- physics.addBody(group_4_1, "static", {density = 0.5, outline = group_4_1_outline})
+
+-- group_4_2_img = "resources/images/obstacle_h_1.png"
+-- group_4_2_outline = graphics.newOutline(2, group_4_2_img)
+-- group_4_2 = display.newImageRect(group_4_2_img, 500, 130)
+-- group_4_2.x = default_width
+-- physics.addBody(group_4_2, "static", {density = 0.5, outline = group_4_2_outline})
+
+-- group_4_3_img = "resources/images/obstacle_h_1_1.png"
+-- group_4_3_outline = graphics.newOutline(2, group_4_3_img)
+-- group_4_3 = display.newImageRect(group_4_3_img, 500, 130)
+-- group_4_3.x = 0
+-- physics.addBody(group_4_3, "static", {density = 0.5, outline = group_4_3_outline})
+
+-- group_4_4_img = "resources/images/obstacle_h_1.png"
+-- group_4_4_outline = graphics.newOutline(2, group_4_4_img)
+-- group_4_4 = display.newImageRect(group_4_4_img, 500, 130)
+-- group_4_4.x = default_width
+-- physics.addBody(group_4_4, "static", {density = 0.5, outline = group_4_4_outline})
+
+-- group_4_5_img = "resources/images/obstacle_h_1_1.png"
+-- group_4_5_outline = graphics.newOutline(2, group_4_5_img)
+-- group_4_5 = display.newImageRect(group_4_5_img, 500, 130)
+-- group_4_5.x = 0
+-- physics.addBody(group_4_5, "static", {density = 0.5, outline = group_4_5_outline})
+
+-- group_4_6_img = "resources/images/obstacle_h_1.png"
+-- group_4_6_outline = graphics.newOutline(2, group_4_6_img)
+-- group_4_6 = display.newImageRect(group_4_6_img, 500, 130)
+-- group_4_6.x = default_width
+-- physics.addBody(group_4_6, "static", {density = 0.5, outline = group_4_6_outline})
+
+-- group_4_7_img = "resources/images/obstacle_h_1_1.png"
+-- group_4_7_outline = graphics.newOutline(2, group_4_7_img)
+-- group_4_7 = display.newImageRect(group_4_7_img, 500, 130)
+-- group_4_7.x = 0
+-- physics.addBody(group_4_7, "static", {density = 0.5, outline = group_4_7_outline})
+
+-- group_4_8_img = "resources/images/obstacle_h_1.png"
+-- group_4_8_outline = graphics.newOutline(2, group_4_8_img)
+-- group_4_8 = display.newImageRect(group_4_8_img, 500, 130)
+-- group_4_8.x = default_width
+-- physics.addBody(group_4_8, "static", {density = 0.5, outline = group_4_8_outline})
+
+-- group_4_1.y, group_4_2.y = 200, 200
+-- group_4_3.y, group_4_4.y = 0, 0
+-- group_4_5.y, group_4_6.y = -200, -200
+-- group_4_7.y, group_4_8.y = -400, -400
+
+-- Group_4_1:insert(group_4_1)
+-- Group_4_1:insert(group_4_2)
+-- Group_4_1:insert(group_4_3)
+-- Group_4_1:insert(group_4_4)
+-- Group_4_1:insert(group_4_5)
+-- Group_4_1:insert(group_4_6)
+-- Group_4_1:insert(group_4_7)
+-- Group_4_1:insert(group_4_8)
+
+
+-- Obstacle_4:insert(Group_4_1)
+
+
+-- local function zigzag(event)
+    
+--     if (reverse_obs_4 == 0) then
+--         reverse_obs_4 = 1
+        
+--         if random_obs_4 == 1 then
+            
+--             transition.to(group_4_1, {x = (group_4_1.width * .5), time = 1200, transition = easing.inOutCubic})
+--             transition.to(group_4_2, {x = default_width + (group_4_2.width * .5), time = 1200, transition = easing.inOutCubic})
+--             transition.to(group_4_3, {x = (group_4_3.width * .5), time = 1000, transition = easing.inOutCubic})
+--             transition.to(group_4_4, {x = default_width + (group_4_4.width * .5), time = 1000, transition = easing.inOutCubic})
+--             transition.to(group_4_5, {x = (group_4_5.width * .5), time = 800, transition = easing.inOutCubic})
+--             transition.to(group_4_6, {x = default_width + (group_4_6.width * .5), time = 800, transition = easing.inOutCubic})
+--             transition.to(group_4_7, {x = (group_4_7.width * .5), time = 650, transition = easing.inOutCubic})
+--             transition.to(group_4_8, {x = default_width + (group_4_8.width * .5), time = 650, transition = easing.inOutCubic})
+        
+--         end
+--     else
+--         reverse_obs_4 = 0
+--         if random_obs_4 == 1 then
+--             transition.to(group_4_1, {x = -(group_4_1.width * .5), time = 1200, transition = easing.inOutCubic})
+--             transition.to(group_4_2, {x = default_width - (group_4_2.width * .5), time = 1200, rotation = 0, transition = easing.inOutCubic})
+--             transition.to(group_4_3, {x = -(group_4_3.width * .5), time = 1000, transition = easing.inOutCubic})
+--             transition.to(group_4_4, {x = default_width - (group_4_4.width * .5), time = 1000, rotation = 0, transition = easing.inOutCubic})
+--             transition.to(group_4_5, {x = -(group_4_5.width * .5), time = 800, transition = easing.inOutCubic})
+--             transition.to(group_4_6, {x = default_width - (group_4_6.width * .5), time = 800, rotation = 0, transition = easing.inOutCubic})
+--             transition.to(group_4_7, {x = -(group_4_7.width * .5), time = 650, transition = easing.inOutCubic})
+--             transition.to(group_4_8, {x = default_width - (group_4_8.width * .5), time = 650, rotation = 0, transition = easing.inOutCubic})
+        
+--         end
+    
+--     end
+-- end
+
+-- timer.performWithDelay(800, zigzag, 0)
+-- Obstacle_4.y = default_width * -.5
+
+
+-- local function move_Obstacle_4(event)
+--     Obstacle_4.y = Obstacle_4.y + 2.4
+--     movey_forward(Obstacle_4)
+
+-- end
+-- -- end
+-- -- ///////////////////////////////////////////////////////////////////
+-- -------------------Obstacle group 5----------------------
+-- local Obstacle_5 = display.newGroup()
+
+-- local Group_5_1 = display.newGroup()
+-- local grp_5_1 = display.newImageRect("resources/images/obstacle_e_4.png", 250, 250)
+-- -- physics.addBody(obs_5, "static", {density = 0.5, outline = cs_outline})
+-- Group_5_1:insert(grp_5_1)
+-- Group_5_1.x = default_width * 0.5
+-- Group_5_1.y = default_height * 0.5
+
+-- local Group_5_2 = display.newGroup()
+-- local ball_5_2 = display.newImageRect("resources/images/obstacle_c_1.png", 150, 150)
+-- local enemy_5_2 = display.newImageRect("resources/images/obstacle_c_1.png", 180, 180)
+-- -- physics.addBody(ball_5_1, "static", {density = 0.5, outline = cs_outline})
+-- -- physics.addBody(enemy_5_1, "static", {density = 0.5, outline = cs_outline})
+-- Group_5_2:insert(ball_5_2)
+-- Group_5_2:insert(enemy_5_2)
+-- Group_5_2.y = 0
+-- Group_5_2.yReference = -60
+-- enemy_5_2.y = -550
+-- enemy_5_2.yReference = 160
+
+
+-- local Group_5_3 = display.newGroup()
+-- local ball_5_3 = display.newImageRect("resources/images/obstacle_h_2.png", 500, 120)
+-- local enemy_5_3 = display.newImageRect("resources/images/obstacle_c_1.png", 180, 180)
+-- -- physics.addBody(ball_5_2, "static", {density = 0.5, outline = cs_outline})
+-- -- physics.addBody(enemy_5_2, "static", {density = 0.5, outline = cs_outline})
+-- Group_5_3:insert(ball_5_3)
+-- Group_5_3:insert(enemy_5_3)
+
+
+-- -- Obstacle_1.y = -default_width * .5
+-- Group_5_3.x = display.contentWidth
+-- Group_5_3.xReference = 200
+-- enemy_5_3.x = 550
+-- enemy_5_3.xReference = -60
+
+-- Obstacle_5:insert(Group_5_1)
+-- Obstacle_5:insert(Group_5_2)
+-- Obstacle_5:insert(Group_5_3)
+
+-- local function move_Obstacle_5(event)
+--     Group_5_1.rotation = Group_5_1.rotation + 1
+--     ball_5_2.rotation = ball_5_2.rotation + 1
+--     enemy_5_2.rotation = enemy_5_2.rotation - 5
+--     Group_5_2.rotation = Group_5_2.rotation + 1
+    
+    
+--     ball_5_3.rotation = ball_5_3.rotation + 5
+--     enemy_5_3.rotation = enemy_5_3.rotation + 5
+--     Group_5_3.rotation = Group_5_3.rotation - 2
+
+
+
+-- end
+
+-- -- ///////////////////////////////////////////////////////////////////
+-- -------------Obstacle 6-----------------------------------
+-- local Obstacle_6 = display.newGroup()
+-- local obs_6_img = "resources/images/obstacle_c_1.png"
+-- local obs_6_outline = graphics.newOutline(2, obs_6_img)
+-- local obs_6b = display.newImageRect(obs_6_img, 220, 220)
+-- physics.addBody(obs_6b, "static", {density = 0.5, outline = obs_6_outline})
+-- Obstacle_6:insert(obs_6b)
+-- local obs_6_1_img = "resources/images/obstacle_s_1.png"
+-- local obs_6_1_outline = graphics.newOutline(2, obs_6_1_img)
+
+-- local obs_6 = {}
+-- for a = 1, 3, 1 do
+--     obs_6[a] = display.newImageRect(obs_6_1_img, 120, 120)
+--     obs_6[a].x = (a * 200) - 200
+--     obs_6[a].y = (a * 100) - 350
+--     obs_6[a].yReference = a * 100
+--     Obstacle_6.y = 0
+--     Obstacle_6.yReference = -60
+--     Obstacle_6:insert(obs_6[a])
+--     physics.addBody(obs_6[a], "static", {density = 0.5, outline = obs_6_1_outline})
+-- end
+
+-- local obs_61 = {}
+-- for a = 1, 3, 1 do
+--     obs_61[a] = display.newImageRect(obs_6_1_img, 120, 120)
+    
+--     obs_61[a].x = -((a * 200) - 200)
+--     obs_61[a].y = -(a * 100) + 350
+--     obs_61[a].yReference = a * 100
+--     Obstacle_6.y = 0
+--     Obstacle_6.yReference = -60
+--     Obstacle_6:insert(obs_61[a])
+--     physics.addBody(obs_61[a], "static", {density = 0.5, outline = obs_6_1_outline})
+-- end
+
+-- Obstacle_6.x = default_centerX
+-- Obstacle_6.y = default_centerY
+
+-- local function move_Obstacle_6(event)
+--     for a = 1, 3, 1 do
+--         obs_6[a].rotation = obs_6[a].rotation - 5
+--         obs_61[a].rotation = obs_61[a].rotation - 5
+--     end
+--     obs_6b.rotation = obs_6b.rotation + 2
+--     Obstacle_6.rotation = Obstacle_6.rotation + .8
+--     -- Obstacle_6.y = Obstacle_6.y + 3
+--     -- if Obstacle_6.y > default_height * 1.5 then
+--     --     Obstacle_6.y = default_height * -.5
+--     -- end
+--     -- Obstacle_6.y = Obstacle_6.y + 2.4
+--     movey_forward(Obstacle_6)
+-- end
